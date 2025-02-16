@@ -1,4 +1,5 @@
 using FlightReservation.Application.Interfaces.Repositories;
+using FlightReservation.Application.Interfaces.Services;
 using FlightReservation.Domain.Entities;
 using FlightReservation.Domain.Enums;
 using FlightReservation.Domain.Primitives;
@@ -13,23 +14,38 @@ public class ReserveFlightCommandHandler : IRequestHandler<ReserveFlightCommand>
     private readonly IReservationRepository _reservationRepository;
     private readonly IUserRepository _userRepository;
     private readonly IFlightRepository _flightRepository;
+    private readonly IEmailService _emailService;
     
     public ReserveFlightCommandHandler(
         IReservationRepository reservationRepository, 
         IUserRepository userRepository, 
-        IFlightRepository flightRepository)
+        IFlightRepository flightRepository, IEmailService emailService)
     {
         _reservationRepository = reservationRepository;
         _userRepository = userRepository;
         _flightRepository = flightRepository;
+        _emailService = emailService;
     }
     public async Task Handle(ReserveFlightCommand request, CancellationToken ct)
     {
         var currentUser = await _userRepository.GetUser(ct, request.UserId);
 
-        if (request.customerId.HasValue && !(currentUser?.IsAdmin??false))
-            throw new FlightReservationException(400,
-                "reserving flights for other users is only available by admins.");
+        User customer = new();
+        if (request.customerId.HasValue)
+        {
+            if(!(currentUser?.IsAdmin??false))
+                throw new FlightReservationException(400,
+                    "reserving flights for other users is only available by admins.");
+
+            customer = await _userRepository.GetUser(ct, request.customerId.Value);
+
+            if (customer is null)
+                throw new FlightReservationException(400,
+                    "No user found with the specified id.");
+        }
+        else
+            customer = currentUser;
+           
         
         var flight = await _flightRepository.GetFlight(ct, request.FlightId);
 
@@ -50,11 +66,18 @@ public class ReserveFlightCommandHandler : IRequestHandler<ReserveFlightCommand>
         {
             var reservation = new Reservation(
                 request.FlightId,
-                request.customerId?? currentUser.Id,
+                customer.Id,
                 status
                 );
 
             await _reservationRepository.ReserveFlight(ct, reservation);
+            
+            Task.Run(() => _emailService.SendEmailAsync(customer.Email,
+                "Succesful Reservation", 
+                $@"
+                    Dear {customer.FirstName} {customer.LastName},
+                    Flight {flight.FlightNumber} was successfully {status.ToString()} for you.
+                "));
         }
         catch (Exception ex)
         {
