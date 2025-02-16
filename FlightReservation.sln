@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightReservation.Application", "FlightReservation.Application\FlightReservation.Application.csproj", "{1862B2AC-D217-47AE-8F65-17F6D529FF7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightReservation.Domain", "FlightReservation.Domain\FlightReservation.Domain.csproj", "{0F54CF1B-9E57-4838-A0FE-46613434EE10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightReservation.Infrastructure", "FlightReservation.Infrastructure\FlightReservation.Infrastructure.csproj", "{A4CEA2CB-50CD-45A8-8C5C-0CF367A48B3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightReservation.Presentation", "FlightReservation.Presentation\FlightReservation.Presentation.csproj", "{DB2C9145-FC2E-4DC3-91DC-BD8112E94D78}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{649200DD-8294-4357-8817-DE3C68DDB4B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightReservation.Shared.Test", "Tests\FlightReservation.Shared.Test\FlightReservation.Shared.Test.csproj", "{64E5828C-EF2D-4DF9-80D9-94108F1681A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightReservation.Application.Test", "Tests\FlightReservation.Application.Test\FlightReservation.Application.Test.csproj", "{6DEC8898-4B1C-46F4-A778-4E4D1722C086}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightReservation.Infrastructure.Test", "Tests\FlightReservation.Infrastructure.Test\FlightReservation.Infrastructure.Test.csproj", "{4838B916-0E59-4630-B370-499CDCB19733}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1862B2AC-D217-47AE-8F65-17F6D529FF7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1862B2AC-D217-47AE-8F65-17F6D529FF7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1862B2AC-D217-47AE-8F65-17F6D529FF7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1862B2AC-D217-47AE-8F65-17F6D529FF7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F54CF1B-9E57-4838-A0FE-46613434EE10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F54CF1B-9E57-4838-A0FE-46613434EE10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F54CF1B-9E57-4838-A0FE-46613434EE10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F54CF1B-9E57-4838-A0FE-46613434EE10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4CEA2CB-50CD-45A8-8C5C-0CF367A48B3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4CEA2CB-50CD-45A8-8C5C-0CF367A48B3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4CEA2CB-50CD-45A8-8C5C-0CF367A48B3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4CEA2CB-50CD-45A8-8C5C-0CF367A48B3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB2C9145-FC2E-4DC3-91DC-BD8112E94D78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB2C9145-FC2E-4DC3-91DC-BD8112E94D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB2C9145-FC2E-4DC3-91DC-BD8112E94D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB2C9145-FC2E-4DC3-91DC-BD8112E94D78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64E5828C-EF2D-4DF9-80D9-94108F1681A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64E5828C-EF2D-4DF9-80D9-94108F1681A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64E5828C-EF2D-4DF9-80D9-94108F1681A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64E5828C-EF2D-4DF9-80D9-94108F1681A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DEC8898-4B1C-46F4-A778-4E4D1722C086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DEC8898-4B1C-46F4-A778-4E4D1722C086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DEC8898-4B1C-46F4-A778-4E4D1722C086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DEC8898-4B1C-46F4-A778-4E4D1722C086}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4838B916-0E59-4630-B370-499CDCB19733}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4838B916-0E59-4630-B370-499CDCB19733}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4838B916-0E59-4630-B370-499CDCB19733}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4838B916-0E59-4630-B370-499CDCB19733}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{64E5828C-EF2D-4DF9-80D9-94108F1681A6} = {649200DD-8294-4357-8817-DE3C68DDB4B6}
+		{6DEC8898-4B1C-46F4-A778-4E4D1722C086} = {649200DD-8294-4357-8817-DE3C68DDB4B6}
+		{4838B916-0E59-4630-B370-499CDCB19733} = {649200DD-8294-4357-8817-DE3C68DDB4B6}
+	EndGlobalSection
+EndGlobal
